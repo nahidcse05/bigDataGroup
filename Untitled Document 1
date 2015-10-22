@@ -1,0 +1,85 @@
+Total Data Point:19851
+White :15825
+White Male:5833
+AfricanAmerican :952
+Asian :1216
+Hispanic :1612
+-----------------------------
+White Vs Asian
+t_statistic:-0.42663206001056825
+p value:0.6696852482298474
+DF:2430
+
+
+
+-----------------------------
+White Vs AfricanAmerican
+t_statistic:1.6511723427880172
+p value:0.0988690281859117
+DF:1902
+
+
+
+-----------------------------
+White Vs Hispanic
+t_statistic:4.098403456766146
+p value:4.267268676388611E-5
+DF:3222
+
+
+
+-----------------------------
+White Male Vs Asian Male
+t_statistic:-0.08681137791043965
+p value:0.9308418163376386
+DF:862
+
+
+
+-----------------------------
+White Female Vs Asian Female
+t_statistic:-0.16962750271635327
+p value:0.865325008034868
+DF:1566
+
+
+
+-----------------------------
+White Male Vs AfricanAmerican Male
+t_statistic:2.590276650923569
+p value:0.009837426232739501
+DF:640
+
+
+
+-----------------------------
+White Female Vs AfricanAmerican Female
+t_statistic:-0.6499001601258694
+p value:0.5158764893842014
+DF:1260
+
+
+
+-----------------------------
+White Male Vs Hispanic Male
+t_statistic:2.559753546124849
+p value:0.010613442459526274
+DF:1092
+
+
+
+-----------------------------
+White Female Vs Hispanic Female
+t_statistic:3.8818647714227037
+p value:1.0705707275419987E-4
+DF:2128
+
+
+
+-----------------------------
+White Vs Non-White
+t_statistic:-4.247320455115373
+p value:2.1898840760483938E-5
+DF:7558
+
+

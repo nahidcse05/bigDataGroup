@@ -1,0 +1,41 @@
+Total Data Point:19851
+White :15825
+AfricanAmerican :952
+Asian :1216
+Hispanic :1612
+-----------------------------
+White Vs Asian
+t_statistic:0.5095409796389251
+p value:0.6104193625359335
+DF:2430
+
+
+
+
+
+-----------------------------
+White Vs AfricanAmerican
+t_statistic:2.2068439575807437
+p value:0.02744510522360574
+DF:1902
+
+
+
+
+
+-----------------------------
+White Vs Hispanic
+t_statistic:4.4970667735133025
+p value:7.139324016454273E-6
+DF:3222
+
+
+
+
+
+White Vs Non-White
+t_statistic:-3.9577706380676836
+p value:7.635855170169899E-5
+DF:7558
+
+

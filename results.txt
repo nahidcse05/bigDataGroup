@@ -1,0 +1,95 @@
+Total Data Point:19851
+White :15825
+White Male:5833
+AfricanAmerican :952
+Asian :1216
+Hispanic :1612
+-----------------------------
+White Vs Asian
+t_statistic:0.23385614039528244
+p value:0.8151163642416972
+DF:2430
+Correlation: 0.005790908537786679
+
+
+
+-----------------------------
+White Vs AfricanAmerican
+t_statistic:3.6479873402315803
+p value:2.7176423321310055E-4
+DF:1902
+Correlation: -0.0011968202064563062
+
+
+
+-----------------------------
+White Vs Hispanic
+t_statistic:4.040279213569195
+p value:5.468442563240903E-5
+DF:3222
+Correlation: -0.01717845004627689
+
+
+
+-----------------------------
+White Male Vs Asian Male
+t_statistic:-1.2520432979779756
+p value:0.21089469580145326
+DF:862
+Correlation: 0.018806947535830947
+
+
+
+-----------------------------
+White Female Vs Asian Female
+t_statistic:0.3842053379130395
+p value:0.7008784472091596
+DF:1566
+Correlation: 0.03964484502108485
+
+
+
+-----------------------------
+White Male Vs AfricanAmerican Male
+t_statistic:2.073104926956716
+p value:0.038586028989747445
+DF:640
+Correlation: -0.019016626877926702
+
+
+
+-----------------------------
+White Female Vs AfricanAmerican Female
+t_statistic:2.9496465004978103
+p value:0.0032424003874770664
+DF:1260
+Correlation: -0.026615418699379688
+
+
+
+-----------------------------
+White Male Vs Hispanic Male
+t_statistic:1.9817297976962092
+p value:0.04777810719107184
+DF:1092
+Correlation: -0.006409250862617366
+
+
+
+-----------------------------
+White Female Vs Hispanic Female
+t_statistic:2.355099027225209
+p value:0.01861251107152124
+DF:2128
+Correlation: -0.03540236472706203
+
+
+
+-----------------------------
+White Vs Non-White
+t_statistic:-3.202288264813356
+p value:0.0013691110140888277
+DF:7558
+Correlation: 0.0012158994652880166
+
+
