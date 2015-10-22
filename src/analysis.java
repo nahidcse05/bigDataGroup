@@ -28,6 +28,29 @@ public class analysis{
 		r = new Random();
 	}
 	
+	
+	double getMean(double [] data)
+    {
+        double sum = 0.0;
+        for(double a : data)
+            sum += a;
+        return sum/data.length;
+    }
+
+    double getVariance(double [] data)
+    {
+        double mean = getMean(data);
+        double temp = 0;
+        for(double a :data)
+            temp += (mean-a)*(mean-a);
+        return temp/data.length;
+    }
+
+    double getStdDev(double [] data)
+    {
+        return Math.sqrt(getVariance(data));
+    }
+	
 	//read the data file here
 	public void readcsv(String fileName)
 	{
@@ -52,12 +75,14 @@ public class analysis{
 				
 				int visitCount = Integer.parseInt(infos[9]);
 				
-				if(visitCount>6) continue;
+				if(visitCount<2 || visitCount>6) continue;
 				
 				int studyPeriodCount = Integer.parseInt(infos[10]);
 				int normalizer = 10;
 				
 				double normalizedCount = (double) visitCount/(normalizer*studyPeriodCount);
+				//double normalizedCount = (double) visitCount;
+				
 				String key = ethnic+gender;
 				if(!list.containsKey(key)){
 					ArrayList<Double> values = new ArrayList<>();
@@ -91,15 +116,11 @@ public class analysis{
 			whiteSize = toplevelList.get("White").size();
 			nonWhiteSize = toplevelList.get("AfricanAmerican").size() + toplevelList.get("Asian").size()+ toplevelList.get("Hispanic").size(); 
 		}
-
-		
 		catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
-
-
 	}
 	
 	public void compairWise(ArrayList<Double> aList, ArrayList<Double> bList, String aGroup, String bGroup){
@@ -123,11 +144,24 @@ public class analysis{
 			i++;
 		}
 		
+		randomNumberList.clear();
 		
-		int df = aList.size()+aList.size() - 2;
+		/*for(int i = 0; i<aList.size();){
+			
+			System.out.println("a"+a[i]+"b"+b[i]);
+			
+		}*/
+		
+		int df = aList.size()+ aList.size() - 2;
 		TTest ttest = new TTest();
 		System.out.println("-----------------------------");
 		System.out.println(bGroup+" Vs "+ aGroup);
+		
+		System.out.println(aGroup+" Mean:"+ getMean(a));
+		System.out.println(aGroup+" Standard Deviation:"+ getStdDev(a));
+		System.out.println(bGroup+" Mean:"+ getMean(b));
+		System.out.println(bGroup+" Standard Deviation:"+ getStdDev(b));
+		
 		System.out.println("t_statistic:"+ ttest.t(a, b));
 		System.out.println("p value:"+ ttest.tTest(a, b));
 		System.out.println("DF:"+ df);
@@ -169,6 +203,13 @@ public class analysis{
 			i++;
 		}
 		
+		
+		/*for(int i = 0; i<nonWhiteSize;){
+			System.out.println("Random Number:"+randomNumberList.get(i)+", white["+i+"]: "+ white[i]);
+			i++;
+		}*/
+		
+		
 		for(int i=0; i<toplevelList.get("AfricanAmerican").size(); i++){
 			nonWhite[i] = toplevelList.get("AfricanAmerican").get(i);
 		}
@@ -185,17 +226,23 @@ public class analysis{
 			j++;
 		}
 		
-		
-		double t_statistic;
 		int df = (int)(nonWhiteSize+nonWhiteSize - 2);
 		TTest ttest = new TTest();
 		System.out.println("-----------------------------");
 		System.out.println("White Vs Non-White");
+		
+		System.out.println("White Mean:"+ getMean(white));
+		System.out.println("White Standard Deviation:"+ getStdDev(white));
+		System.out.println("Non-White Mean:"+ getMean(nonWhite));
+		System.out.println("Non-White Standard Deviation:"+ getStdDev(nonWhite));
+		
 		System.out.println("t_statistic:"+ ttest.t(white, nonWhite));
 		System.out.println("p value:"+ ttest.tTest(white, nonWhite));
 		System.out.println("DF:"+ df);
 		double corr = new PearsonsCorrelation().correlation(white, nonWhite);
 		System.out.println("Correlation: "+ corr);
+		
+		
 		
 	}
 	
