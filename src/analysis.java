@@ -18,27 +18,19 @@ public class analysis{
 
 	HashMap<String, ArrayList<Double>> list = new HashMap<String, ArrayList<Double>>();
 	HashMap<String, ArrayList<Double>> toplevelList = new HashMap<String, ArrayList<Double>>();
-	
-	
 	double white [];
 	double nonWhite[];
-	
-	boolean randomNumber [];
-	
 	int nonWhiteSize;
 	int whiteSize;
-	
 	Random r;
 	
 	public analysis(){
 		r = new Random();
 	}
 	
-	
+	//read the data file here
 	public void readcsv(String fileName)
 	{
-		
-
 		BufferedReader fileReader = null;
 		try {
 
@@ -66,11 +58,7 @@ public class analysis{
 				int normalizer = 10;
 				
 				double normalizedCount = (double) visitCount/(normalizer*studyPeriodCount);
-				
-				//System.out.println("Ethnic:"+ethnic);
-				
 				String key = ethnic+gender;
-				//System.out.println("Key:" + key);
 				if(!list.containsKey(key)){
 					ArrayList<Double> values = new ArrayList<>();
 					values.add(normalizedCount);
@@ -145,10 +133,7 @@ public class analysis{
 		System.out.println("DF:"+ df);
 		double corr = new PearsonsCorrelation().correlation(a, b);
 		System.out.println("Correlation: "+ corr);
-		
 		System.out.println("\n\n");
-		
-		
 	}
 
 	public void compare(){
@@ -161,17 +146,14 @@ public class analysis{
 		compairWise(list.get("AsianM"), list.get("WhiteM"), "Asian Male", "White Male");
 		compairWise(list.get("AsianF"), list.get("WhiteF"), "Asian Female", "White Female");
 		
-		
 		compairWise(list.get("AfricanAmericanM"), list.get("WhiteM"), "AfricanAmerican Male", "White Male");
 		compairWise(list.get("AfricanAmericanF"), list.get("WhiteF"), "AfricanAmerican Female", "White Female");
 		
 		compairWise(list.get("HispanicM"), list.get("WhiteM"), "Hispanic Male", "White Male");
 		compairWise(list.get("HispanicF"), list.get("WhiteF"), "Hispanic Female", "White Female");
 		
-		
 		white = new double [nonWhiteSize];
 		nonWhite = new double [nonWhiteSize];
-		
 		ArrayList<Integer> randomNumberList = new ArrayList<Integer>(); 
 		
 		for(int i = 0; i<nonWhiteSize;){
@@ -184,11 +166,8 @@ public class analysis{
 					break;
 				}
 			}
-			
-			//System.out.println("White["+i+"]:"+white[i]);
 			i++;
 		}
-		
 		
 		for(int i=0; i<toplevelList.get("AfricanAmerican").size(); i++){
 			nonWhite[i] = toplevelList.get("AfricanAmerican").get(i);
@@ -227,6 +206,4 @@ public class analysis{
 		ans.compare();
 		System.out.println();
 	}
-
-
 }
