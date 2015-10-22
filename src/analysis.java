@@ -8,6 +8,12 @@ import java.util.Random;
 import org.apache.commons.math3.stat.inference.*;
 import org.apache.commons.math3.stat.correlation.*;
 
+/**
+ * @author Md. Mustafizur Rahman (mr4xb@virginia.edu)
+ * Big Data in Mental Health
+ * Group Project 
+ */
+
 public class analysis{
 
 	HashMap<String, ArrayList<Double>> list = new HashMap<String, ArrayList<Double>>();
